@@ -1,6 +1,6 @@
 {
   "cleanUrls": true,
-  "rewrites": [
-    { "source": "/", "destination": "/premium" }
+  "redirects": [
+    { "source": "/", "destination": "/premium", "permanent": false }
   ]
 }
