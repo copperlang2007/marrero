@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#082e26" />
+  <title>Marrero Group PLLC</title>
+  <style>html,body{margin:0;min-height:100%;background:#082e26}body{display:grid;place-items:center;color:#f5eadb;font-family:system-ui,sans-serif}.loading{letter-spacing:.18em;text-transform:uppercase;font-size:11px;opacity:.7}</style>
+</head>
+<body>
+  <div class="loading">Marrero Group</div>
+  <script>
+    (async()=>{
+      try{
+        const res=await fetch('/index.html',{cache:'no-store'});
+        if(!res.ok) throw new Error('Unable to load site');
+        let html=await res.text();
+        html=html.replace('</head>','<link rel="stylesheet" href="/premium.css?v=2"></head>');
+        html=html.replace('</body>','<script src="/premium.js?v=2"><'+'/script></body>');
+        document.open();
+        document.write(html);
+        document.close();
+      }catch(err){
+        document.body.innerHTML='<main style="max-width:640px;padding:40px"><h1>Site preview unavailable</h1><p>Please refresh the page.</p></main>';
+        console.error(err);
+      }
+    })();
+  </script>
+</body>
+</html>
