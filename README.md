@@ -1,35 +1,67 @@
-# Marrero Group LLC Digital Platform
+# Marrero Group Digital Platform
 
-This repository is the canonical implementation and operating memory for Marrero Group LLC's public website and digital operating surface.
+This repository is the **single canonical implementation** of the Marrero Group public website.
 
-## Mission
-Deliver and maintain a production-grade, AI-native website and operational repository that is safe to evolve by future engineers and coding agents.
+## Production
 
-## Current Baseline (audited)
-- Runtime application code: **not present yet** in this repository snapshot.
-- Test/build tooling: **not present yet** in this repository snapshot.
-- Existing content at audit start: `README.md` with project name and domain only.
+- Hosting: Vercel
+- Production URL: https://marrero-three.vercel.app/
+- Runtime: static HTML/CSS/JavaScript
+- Build step: none
+- Runtime dependencies: none
+- Package dependencies: none
 
-See `/docs/STATUS.md` for current phase, blockers, and next actions.
+## Canonical implementation
 
-## Required onboarding order
-1. `/AGENTS.md`
-2. `/docs/STATUS.md`
-3. `/docs/PRODUCT_CONTRACT.md`
-4. `/docs/ARCHITECTURE.md`
-5. relevant ADRs in `/docs/adr/`
-6. relevant implementation files
-7. recent test/QA evidence in `/docs/evidence/`
+There is one production implementation only:
 
-## Working agreements
-- Do not invent business facts, compliance claims, biographies, ratings, or contact details.
-- Mark unknown or unverified information explicitly as unverified.
-- Preserve approved “Modern Legacy” design direction; do not flatten to generic SaaS styling.
-- Every meaningful change must leave test/QA/security evidence.
+- `index.html` — semantic page markup
+- `assets/styles.css` — the only production visual system
+- `assets/site.js` — the only production interaction/motion system
+- `favicon.svg` — site icon
 
-## Repository map
-- `AGENTS.md` / `CLAUDE.md`: agent operating contract
-- `.github/copilot-instructions.md`: repository-wide Copilot instructions
-- `docs/`: product, architecture, design, QA, deployment, security, compliance, runbooks, decisions, evidence
-- `tests/`: automated tests (to be established with app code)
-- `scripts/`: repository automation scripts (to be added with concrete workflows)
+Alternate entrypoints, hotfix stylesheets, premium wrappers, and fallback visual systems are prohibited.
+
+## Verification
+
+```bash
+npm run verify
+```
+
+This runs:
+- source integrity checks
+- JavaScript syntax validation
+- Node built-in tests
+
+CI runs the same verification on pushes to `main` and pull requests.
+
+## Architecture principles
+
+- one source of truth
+- zero runtime framework/dependency overhead
+- fluid responsive proportions
+- accessible keyboard/focus behavior
+- reduced-motion support
+- no fabricated business/compliance facts
+- no dead-end or fake-success conversion behavior
+- no untracked visual override layers
+
+## External dependencies
+
+The site intentionally uses:
+- Google Fonts for typography
+- approved Marrero Group public images hosted on `static.wixstatic.com`
+- existing Marrero Group scheduling/community URLs
+
+External image hosts are constrained by repository verification.
+
+## Agent onboarding
+
+Read in order:
+1. `AGENTS.md`
+2. `docs/STATUS.md`
+3. `docs/PRODUCT_CONTRACT.md`
+4. `docs/ARCHITECTURE.md`
+5. relevant ADRs
+6. implementation files
+7. recent evidence
