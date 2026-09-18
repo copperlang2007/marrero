@@ -97,9 +97,16 @@
   const intro=document.getElementById('brandIntro');
   const introSkip=intro?.querySelector('.intro-skip');
   const introKey='marrero-intro-seen';
+  const setIntroChrome=(locked)=>{
+    for(const selector of ['.site-header','main','.site-footer']){
+      const el=document.querySelector(selector);
+      if(el) el.inert=locked;
+    }
+  };
   const hideIntro=()=>{
     if(!intro || intro.hidden) return;
     intro.classList.add('is-leaving');
+    setIntroChrome(false);
     setTimeout(()=>{ intro.hidden=true; intro.classList.remove('is-leaving'); },560);
     try{ sessionStorage.setItem(introKey,'1'); }catch{}
   };
@@ -107,6 +114,7 @@
     let seen=false; try{ seen=sessionStorage.getItem(introKey)==='1'; }catch{}
     if(!seen && !introReduce){
       intro.hidden=false;
+      setIntroChrome(true);
       introSkip?.focus();
       setTimeout(hideIntro,2300);
     }
