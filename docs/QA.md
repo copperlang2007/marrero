@@ -1,13 +1,31 @@
 # QA
 
-## Visual QA checklist for meaningful UI changes
+## Release QA
+
+For meaningful UI changes inspect:
 - desktop first viewport
+- tablet transition
 - mobile first viewport
-- typography and spacing integrity
+- typography scale and wrapping
+- image crops and aspect ratios
+- section overlap boundaries
 - shadow/elevation hierarchy
-- image crops/alignment
-- CTA prominence and clarity
-- interaction states (hover/focus/pressed)
+- CTA prominence
+- hover/focus/pressed states
+- mobile menu
+- accordion behavior
 - reduced-motion behavior
 
-Store artifacts in `docs/evidence/screenshots/` and journey notes in `docs/evidence/journeys/`.
+## Required automated gate
+
+Run:
+
+```bash
+npm run verify
+```
+
+No release should bypass the source verifier because it guards against the exact override-layer drift that previously distorted production.
+
+## Evidence
+
+Store durable release/visual evidence under `docs/evidence/` when it materially helps future agents reproduce or verify a release.
