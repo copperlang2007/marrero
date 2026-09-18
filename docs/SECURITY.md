@@ -1,15 +1,35 @@
 # SECURITY
 
-## Non-negotiables
-- Never commit secrets (keys, tokens, credentials, certs).
-- Use platform secret management for sensitive values.
-- Minimize user-submitted data collection.
+## Current attack surface
 
-## Required reviews for implementation changes
-- dependency risk review
-- external script/link review
-- form endpoint/data handling review
-- exposure of environment/configuration review
+The production site is static:
+- no server runtime
+- no database
+- no authentication
+- no API keys
+- no committed secrets
+- no package/runtime dependencies
 
-## Current baseline
-No runtime code present to perform application-layer security audit in this snapshot.
+This intentionally keeps the technical attack surface small.
+
+## User data
+
+The inquiry form prepares an email in the visitor's local mail client. The site does not persist form data.
+
+Do not collect or request sensitive health, financial, Medicare-identifying, or government-ID information through the email workflow.
+
+## External resources
+
+- Google Fonts
+- allowlisted public Marrero images on `static.wixstatic.com`
+- explicit outbound Marrero/podcast/Medicare destinations
+
+New external scripts are prohibited unless explicitly reviewed and documented.
+
+## Release review
+
+For every material change:
+- run `npm run verify`
+- confirm no secrets were introduced
+- review new external destinations
+- review any change to form/data handling
