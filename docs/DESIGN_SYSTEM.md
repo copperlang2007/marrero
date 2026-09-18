@@ -1,25 +1,48 @@
-# DESIGN_SYSTEM
+# DESIGN SYSTEM
 
-## Visual intent
-Modern Legacy: premium 3D claymorphic realism with disciplined hierarchy.
+## Direction
 
-## Core tokens (to implement in code)
-- Colors: warm ivory base, deep forest surfaces, bronze/champagne accents
-- Typography: editorial serif for brand voice; supporting readable body type
-- Spacing/radius: consistent scale, avoid arbitrary values
+Luxury Modern Legacy: editorial financial-advisory credibility with dimensional ivory clay, deep forest lacquer/glass, and champagne/bronze metal accents.
 
-## Elevation hierarchy
-- **Level 0:** flat editorial content
-- **Level 1:** subtly raised informational surfaces
-- **Level 2:** interactive clay surfaces
-- **Level 3:** priority conversion surfaces
-- **Level 4:** hero/major foreground composition
+## Canonical implementation
 
-## Interaction states
-- Hover: tactile lift/contrast adjustment
-- Focus: clear visible indicator meeting contrast expectations
-- Pressed: slight compression/settle
-- Reduced motion: disable non-essential parallax/animated transitions
+All production design lives in `assets/styles.css`. Do not add visual override stylesheets.
 
-## Motion standards
-Use transform/opacity-first motion for entrance hierarchy and feedback; avoid theatrical looping or bounce-heavy effects.
+## Core tokens
+
+The stylesheet defines:
+- paper/ivory surfaces
+- forest surfaces
+- gold/bronze accents
+- ink/muted text
+- bounded shell width
+- radius hierarchy
+- paper and dark elevation recipes
+- shared easing
+
+## Proportion rules
+
+- typography and spacing use fluid `clamp()`
+- content widths are bounded
+- media/card dimensions use explicit aspect ratios
+- mobile uses recomposed layouts instead of scaled desktop geometry
+- perspective response is limited to fine-pointer devices
+- motion never controls content availability
+
+## Elevation
+
+- Level 0: editorial background/content
+- Level 1: subtle paper surface
+- Level 2: interactive clay card
+- Level 3: conversion/featured panel
+- Level 4: hero composition
+
+Not every element should float.
+
+## Accessibility
+
+- visible `:focus-visible` ring
+- reduced-motion support
+- keyboard-close mobile menu
+- accordion ARIA relationships
+- adequate touch targets
