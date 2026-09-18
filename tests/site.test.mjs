@@ -39,3 +39,13 @@ test('legacy visual override names cannot return', () => {
   const all = html + css + js;
   for (const stale of ['premium.html','premium.css','premium.js','hotfix.css','site.css']) assert.doesNotMatch(all, new RegExp(stale.replace('.','\\.')));
 });
+
+test('authored Marrero identity and Compass remain part of the product', () => {
+  assert.match(html, /id="brandIntro"/);
+  assert.match(html, /id="guide"/);
+  assert.match(html, /Marrero Compass/);
+  const options = [...html.matchAll(/data-guide="[^"]+"/g)];
+  assert.equal(options.length, 6);
+  assert.match(js, /marrero-intro-seen/);
+  assert.match(js, /guideData/);
+});
