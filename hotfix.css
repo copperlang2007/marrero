@@ -3,24 +3,17 @@ header{position:sticky;top:0;z-index:200;isolation:isolate}
 .topline{position:relative;inset:auto;background:#082e26;backdrop-filter:none}
 .nav-wrap{position:relative;top:auto;left:auto;right:auto;background:#0b332b;backdrop-filter:none}
 .hero{padding-top:28px;overflow:hidden}
-.hero-visual{overflow:hidden;margin-right:0;background:
-  radial-gradient(circle at 70% 20%,rgba(232,196,132,.22),transparent 34%),
-  linear-gradient(160deg,#0a2a23 0%,#123c32 42%,#1a4639 70%,#0c241e 100%)}
+.hero-visual{overflow:hidden;margin-right:0;clip-path:polygon(6% 0,100% 0,100% 100%,0 100%,0 10%);background:radial-gradient(circle at 70% 20%,rgba(232,196,132,.22),transparent 34%),linear-gradient(160deg,#0a2a23 0%,#123c32 42%,#1a4639 70%,#0c241e 100%)}
 .hero-visual img{display:none!important}
-.hero-visual:before{
-  content:"MG";
-  display:flex;align-items:flex-end;justify-content:flex-end;
-  padding:0 8% 6%;
-  background:linear-gradient(90deg,rgba(6,35,29,.05),rgba(4,17,14,.18) 56%,rgba(2,10,8,.66));
-  font-family:"Libre Caslon Display",Georgia,serif;
-  font-size:clamp(96px,14vw,220px);line-height:.8;
-  color:rgba(239,208,154,.07);letter-spacing:-.06em;
-}
+.hero-photo{position:absolute;inset:0;background:radial-gradient(circle at 70% 20%,rgba(232,196,132,.22),transparent 34%),linear-gradient(160deg,#0a2a23 0%,#123c32 42%,#1a4639 70%,#0c241e 100%)}
+.hero-photo:before{content:"MG";position:absolute;right:8%;bottom:6%;font-family:"Libre Caslon Display",Georgia,serif;font-size:clamp(96px,14vw,220px);line-height:.8;color:rgba(239,208,154,.07);letter-spacing:-.06em}
 .service img{display:none!important}
-.service{background:linear-gradient(180deg,#1a3d34 0 46%,#fffaf2 46% 100%)}
-.service:nth-child(2){background:linear-gradient(180deg,#163f4a 0 46%,#fffaf2 46% 100%)}
-.service:nth-child(3){background:linear-gradient(180deg,#3a2a18 0 46%,#fffaf2 46% 100%)}
-.service:nth-child(4){background:linear-gradient(180deg,#204338 0 46%,#fffaf2 46% 100%)}
+.service-media{position:absolute;left:0;right:0;top:0;height:52%;display:flex;align-items:flex-end;justify-content:flex-start;padding:18px 22px;letter-spacing:.22em;text-transform:uppercase;font-size:10px;font-weight:700;color:rgba(255,250,240,.82)}
+.service-media span{background:rgba(8,46,38,.42);border:1px solid rgba(239,208,154,.28);padding:6px 10px;border-radius:999px}
+.media-health{background:linear-gradient(145deg,#1a4a3e,#0d2f28 55%,#c89a5d 160%)}
+.media-medicare{background:linear-gradient(145deg,#163f4a,#0c2a28 55%,#d7aa70 160%)}
+.media-life{background:linear-gradient(145deg,#3a2a18,#1a2e28 50%,#c89a5d 160%)}
+.media-retire{background:linear-gradient(145deg,#204338,#102820 55%,#efd09a 170%)}
 .podcast{background:#121814}
 .podcast img{opacity:.55}
 .podcast:after{background:linear-gradient(90deg,rgba(8,14,12,.88),rgba(8,14,12,.42) 55%,rgba(8,14,12,.18))}
