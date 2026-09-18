@@ -1,21 +1,29 @@
 ## Summary
 - What changed and why?
 
-## Verification Evidence
-- Commands run and exact outcomes:
+## Canonical Architecture
+- [ ] No alternate HTML entrypoint added
+- [ ] No hotfix/override stylesheet added
+- [ ] Canonical files remain `index.html`, `assets/styles.css`, `assets/site.js`
+
+## Verification
+- [ ] `npm run verify`
+- Exact result:
 
 ## Visual QA
-- Desktop evidence:
-- Mobile evidence:
+- [ ] Desktop inspected (if UI changed)
+- [ ] Tablet/mobile inspected (if UI changed)
+- Notes/evidence:
 
-## Security/Compliance Review
-- Secrets scan result:
-- Compliance-sensitive content touched? If yes, evidence:
+## Security / Compliance
+- [ ] No secrets introduced
+- [ ] New external links/resources reviewed
+- [ ] Compliance-sensitive copy verified if changed
 
-## Documentation Updates
-- [ ] docs/STATUS.md
-- [ ] docs/DECISIONS.md (and ADR if required)
-- [ ] Other impacted docs
+## Documentation
+- [ ] `docs/STATUS.md` updated when material
+- [ ] ADR added/updated when architectural
+- [ ] Failure memory updated when a repeatable failure was discovered
 
-## Residual Risks / Follow-ups
-- 
+## Residual Risks
+-
