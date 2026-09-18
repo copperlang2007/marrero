@@ -1,96 +1,88 @@
 # AGENTS.md — Marrero Repository Operating Contract
 
-## Read this first (in order)
+## Required read order
 1. `AGENTS.md`
 2. `docs/STATUS.md`
 3. `docs/PRODUCT_CONTRACT.md`
 4. `docs/ARCHITECTURE.md`
-5. Relevant ADRs in `docs/adr/`
-6. Relevant implementation files
-7. Recent test/QA evidence in `docs/evidence/`
+5. relevant ADRs in `docs/adr/`
+6. implementation files
+7. recent evidence in `docs/evidence/`
 
-## What Marrero Group is
-Marrero Group LLC is a multi-line advisory and insurance-oriented organization with digital needs spanning insurance education/conversion, community presence, and recruiting.
+## Product
 
-## Product purpose
-Provide a trustworthy public digital surface that helps visitors:
-- understand service lines
-- choose relevant paths (ACA, Medicare, life, retirement, recruiting, community, media)
-- complete lead/contact/scheduling actions
-
-## Business lines in scope
+Marrero Group's public site serves:
 - ACA / individual and family health coverage
-- Medicare Advantage and Medicare supplements
-- Life insurance
-- Retirement planning
-- Quote and enrollment pathways
-- Appointment scheduling
-- Licensed and non-licensed agent recruiting
-- Podcast / media
-- Nonprofit and community work
-- Sir Kendrick’s Smile for Autism
-- About / founder / company story
-- Testimonials
-- Contact and lead capture
+- Medicare education and plan conversations
+- life insurance
+- retirement planning
+- quote/contact/scheduling pathways
+- agent recruiting
+- podcast/media
+- nonprofit/community work
+- Sir Kendrick's Smile for Autism
+- founder/company story
+- testimonials
 
-## Design direction (non-negotiable)
-Preserve and improve approved Modern Legacy direction: premium claymorphic depth, warm ivory/forest/bronze palette, editorial serif voice, dimensional hierarchy, premium motion, and excellent mobile/desktop behavior.
+## Canonical architecture
 
-## Repository architecture (current)
-- Documentation-first operating spine exists under `docs/`.
-- Application/runtime code is not yet present in this repository snapshot.
-- Architecture and delivery guidance are documented so future implementation is deterministic.
+Only one website implementation may exist:
+- `index.html`
+- `assets/styles.css`
+- `assets/site.js`
+- `favicon.svg`
 
-## Development / build / test commands
-Current baseline: no runnable app/test toolchain found.
-- Required next action: add concrete commands once runtime code is introduced.
-- Until then, do not claim build/test success for product code.
+Do not create:
+- alternate HTML entrypoints
+- premium/legacy variants
+- hotfix stylesheets
+- temporary visual override files
+- duplicate production implementations
 
-## Visual QA process
-For meaningful UI changes, capture evidence for desktop + mobile and store under:
-- `docs/evidence/screenshots/`
-- `docs/evidence/journeys/`
+If a redesign is approved, modify the canonical files directly.
 
-## Deployment process
-See `docs/DEPLOYMENT.md`. Do not mark production-ready without deployed URL verification and smoke checks.
+## Commands
 
-## Documentation requirements
-Update relevant docs on every meaningful change, especially:
-- `docs/STATUS.md`
-- `docs/DECISIONS.md` (+ ADR when decision is architectural/product-significant)
-- `docs/TESTING.md`, `docs/QA.md`, `docs/SECURITY.md` when impacted
+```bash
+npm run check
+npm test
+npm run verify
+```
 
-## Status update requirements
-Keep `docs/STATUS.md` current with:
-- current phase
-- what works
-- tested evidence
-- blockers
-- highest-leverage next actions
+`npm run verify` is the release gate.
 
-## ADR expectations
-Use `docs/adr/` for meaningful architecture/product decisions (not trivial edits). Add index entry in `docs/DECISIONS.md`.
+## Design contract
 
-## Evidence requirements
-No assertion without evidence. For claims of readiness, include:
-- test command output
-- visual QA artifacts
-- deployment verification details
+Preserve the approved luxury Modern Legacy direction:
+- warm ivory clay surfaces
+- deep forest lacquer/glass
+- champagne/bronze metal accents
+- editorial serif hierarchy
+- controlled realistic depth
+- fluid proportions
+- restrained motion
+- intentional mobile composition
 
-## Security rules
-- Never commit secrets or tokens.
-- Minimize PII collection.
-- Verify third-party scripts, links, and form handling.
+Do not flatten the site into generic SaaS cards and do not use arbitrary perspective, shadows, or breakpoint overrides.
 
-## Prohibited assumptions
-Do not invent business, compliance, biographical, or deployment facts. Mark unverified details explicitly.
+## Engineering rules
+
+- evidence before assertion
+- no fabricated business, compliance, licensing, testimonial, or founder facts
+- no secrets in the repo
+- no dead links or fake-success forms
+- all meaningful UI changes must preserve desktop/mobile behavior
+- external image hosts must remain allowlisted in `scripts/verify.mjs`
+- update `docs/STATUS.md` after meaningful work
+- record architectural decisions in `docs/adr/`
+- document repeatable failures in `docs/playbooks/FAILURE_MEMORY.md`
 
 ## Definition of done
-Done means implemented, tested where possible, visually inspected where relevant, security-considered, documented, and status-updated with explicit residual risks.
 
-## Orientation workflow for future agents
-1. Read required files in order.
-2. Confirm current repository state vs documented status.
-3. Run available checks; preserve evidence.
-4. Make focused change.
-5. Update docs + evidence + decisions as needed.
+A change is complete only when:
+- implementation is in the canonical files
+- `npm run verify` passes
+- deployed production behavior is checked when deployment is affected
+- accessibility/security/compliance implications are considered
+- docs reflect repository reality
+- no alternate implementation or stale override layer was introduced
