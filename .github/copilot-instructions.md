@@ -1,19 +1,30 @@
-# Copilot Instructions — Marrero Repository
+# Copilot Instructions — Marrero
 
-## Mission
-Maintain a production-grade, AI-native repository for Marrero Group LLC's website and digital operations.
+## Canonical production architecture
+There is exactly one website implementation:
+- `index.html`
+- `assets/styles.css`
+- `assets/site.js`
+- `favicon.svg`
 
-## Hard requirements
-- Preserve approved Modern Legacy design direction.
-- Reuse components/primitives; avoid ad hoc UI duplication.
-- Keep behavior responsive on desktop and mobile.
-- Maintain accessibility (semantic structure, keyboard support, visible focus, contrast, reduced motion).
-- Update documentation and status with every meaningful change.
-- Create ADRs for meaningful architecture/product decisions.
-- Test before claiming completion.
-- Never fabricate business, compliance, deployment, or user facts.
-- Never present mock/stub behavior as finished functionality.
-- Apply secure-by-default practices; never commit secrets.
+Never create alternate HTML entrypoints, premium/legacy variants, hotfix CSS, or competing visual systems. Modify the canonical source directly.
 
-## Production-readiness definition
-A change is only ready when implementation, verification evidence, documentation updates, and known limitations are all explicit.
+## Required behavior
+- preserve luxury Modern Legacy design direction
+- preserve fluid desktop/tablet/mobile proportions
+- reuse existing tokens and elevation rules
+- maintain keyboard/focus/reduced-motion accessibility
+- never invent business/compliance/licensing/testimonial facts
+- never present mock behavior as production behavior
+- never commit secrets
+
+## Verification
+Before completion run:
+
+```bash
+npm run verify
+```
+
+Meaningful UI changes also require desktop/mobile visual inspection.
+
+Update `docs/STATUS.md` and relevant ADR/failure memory when architectural state changes.
