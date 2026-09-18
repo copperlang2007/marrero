@@ -93,6 +93,7 @@
   });
 })();
   // Marrero identity moment — once per session, never blocks reduced-motion users.
+  const introReduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const intro=document.getElementById('brandIntro');
   const introSkip=intro?.querySelector('.intro-skip');
   const introKey='marrero-intro-seen';
@@ -104,7 +105,7 @@
   };
   if(intro){
     let seen=false; try{ seen=sessionStorage.getItem(introKey)==='1'; }catch{}
-    if(!seen && !reduce){
+    if(!seen && !introReduce){
       intro.hidden=false;
       introSkip?.focus();
       setTimeout(hideIntro,2300);
