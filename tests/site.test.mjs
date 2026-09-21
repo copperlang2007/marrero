@@ -59,3 +59,8 @@ test('all first-party destination pages exist', () => {
   ];
   for (const page of requiredPages) assert.ok(existsSync(page), `missing ${page}`);
 });
+
+test('legacy Marrero page URLs cannot return', () => {
+  const all = html + js;
+  assert.doesNotMatch(all, /https:\/\/www\.marrerogroupllc\.com\//i);
+});
