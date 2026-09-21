@@ -1,16 +1,17 @@
 # STATUS
 
-- **Current phase:** Authored experience hardening
-- **Canonical implementation:** `index.html` + `assets/styles.css` + `assets/site.js`
+- **Current phase:** First-party site completion / migration hardening
 - **Production:** https://marrero-three.vercel.app/
 - **Hosting:** Vercel, connected to `main`
-- **Current experience:** luxury Modern Legacy composition with a session-scoped Marrero identity intro, productized Marrero Compass decision guide, service discovery, founder/mission story, agent opportunity, Medicare/life/retirement education, podcast/community surfaces, testimonials and first-touch inquiry flow.
-- **Brand separation rule:** INSUREitALL is a separate client brand. Its assets, copy, colors, product names and identity must never be reused in Marrero. The transferable standard is execution rigor only.
-- **What works:** responsive navigation, brand intro with skip/reduced-motion behavior, Marrero Compass recommendations, service discovery, accordions, community/podcast links, phone/email/scheduling pathways, mailto inquiry preparation, reduced-motion support and keyboard behavior.
-- **Verification:** zero-dependency source verifier, JavaScript syntax check, Node built-in tests, GitHub Actions CI.
-- **Known technical debt:** none intentionally carried in the canonical architecture.
-- **Explicit external dependencies:** Google Fonts; allowlisted Marrero public media on `static.wixstatic.com`; existing external Marrero scheduling/community/podcast pages.
-- **Product limitation:** inquiry form prepares email instead of writing to an approved CRM/backend.
-- **Visual QA requirement:** human desktop/mobile judgment remains mandatory for meaningful composition changes.
-- **Next highest-leverage work:** replace remote media with approved owned originals and add an approved real Charletta portrait/community photography when available; connect inquiry handling to an approved secure lead destination when business requirements are defined.
-- **Last updated:** 2026-09-17
+- **Architecture:** static multi-page site with one canonical visual/behavior system
+- **First-party routes live:** Home, Services, Insurance, Medicare, Life & Retirement, Agents, Podcast, Community, Sir Kendrick’s Smile, About, Schedule, Contact
+- **Legacy route migration:** old Wix-era paths redirect to new equivalents through `vercel.json`
+- **Homepage:** authored MG identity intro, Marrero Compass, service/founder/career/community/media/testimonial/contact surfaces
+- **Forms:** Contact and Schedule prepare email requests locally; they do not store sensitive data or pretend a CRM/backend exists
+- **Verification:** full-site recursive source verifier + Node tests + GitHub Actions CI
+- **Current CI:** passing after full page build
+- **Production route checks:** all first-party routes return HTTP 200
+- **Known product limitation:** no approved backend/CRM destination for inquiry persistence
+- **External dependencies:** Google Fonts, approved Marrero Wix-hosted imagery, Power Play Radio, Medicare.gov, existing Jotform application
+- **Next highest-leverage work:** move to approved custom domain when ready; replace remote imagery with owned optimized originals; connect inquiries to an approved secure destination; add verified founder/community photography
+- **Last updated:** 2026-09-21
