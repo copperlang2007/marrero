@@ -1,0 +1,13 @@
+{
+  "redirects": [
+    {"source":"/about-us","destination":"/about/","permanent":true},
+    {"source":"/services-5","destination":"/services/","permanent":true},
+    {"source":"/insurance","destination":"/insurance/","permanent":true},
+    {"source":"/scheduling-an-apointment","destination":"/schedule/","permanent":true},
+    {"source":"/live-broadcasting","destination":"/podcast/","permanent":true},
+    {"source":"/nonprofit","destination":"/community/","permanent":true},
+    {"source":"/sir-kendrick-s-smile-for-autism","destination":"/sir-kendrick/","permanent":true},
+    {"source":"/claims","destination":"/contact/","permanent":true},
+    {"source":"/become-an-agent","destination":"/agents/","permanent":true}
+  ]
+}
