@@ -124,12 +124,12 @@
 
   // Marrero Compass — useful decision guidance, not eligibility or enrollment.
   const guideData={
-    health:{title:'Health coverage',body:'Start with your household, timing and coverage needs. Marrero Group can help you understand individual and family coverage options.',href:'#contact',cta:'Start this conversation ↗'},
-    medicare:{title:'Medicare',body:'Start with where you are in the Medicare timeline and what you want to understand. Marrero Group can walk through Advantage and supplement conversations.',href:'#medicare',cta:'Understand Medicare ↗'},
-    life:{title:'Life insurance',body:'Start with who and what you want to protect. Marrero Group can discuss life insurance approaches around your goals.',href:'#retirement',cta:'Explore protection ↗'},
-    retirement:{title:'Retirement planning',body:'Start with the future you are planning for. Marrero Group can discuss long-term protection and retirement conversations.',href:'#retirement',cta:'Plan what comes next ↗'},
-    career:{title:'Agent opportunity',body:'Start with the kind of career opportunity you are looking for. Explore Marrero Group’s licensed and non-licensed agent path.',href:'https://www.marrerogroupllc.com/become-an-agent',cta:'Explore agent opportunities ↗',external:true},
-    community:{title:'Community impact',body:'Start with how you want to participate. Explore Marrero Group’s nonprofit work and Sir Kendrick’s Smile for Autism.',href:'#community',cta:'Explore community ↗'}
+    health:{title:'Health coverage',body:'Start with your household, timing and coverage needs. Marrero Group can help you understand individual and family coverage options.',href:'/insurance/',cta:'Explore health coverage ↗'},
+    medicare:{title:'Medicare',body:'Start with where you are in the Medicare timeline and what you want to understand. Marrero Group can walk through Advantage and supplement conversations.',href:'/medicare/',cta:'Understand Medicare ↗'},
+    life:{title:'Life insurance',body:'Start with who and what you want to protect. Marrero Group can discuss life insurance approaches around your goals.',href:'/life-retirement/',cta:'Explore protection ↗'},
+    retirement:{title:'Retirement planning',body:'Start with the future you are planning for. Marrero Group can discuss long-term protection and retirement conversations.',href:'/life-retirement/',cta:'Plan what comes next ↗'},
+    career:{title:'Agent opportunity',body:'Start with the kind of career opportunity you are looking for. Explore Marrero Group’s licensed and non-licensed agent path.',href:'/agents/',cta:'Explore agent opportunities ↗'},
+    community:{title:'Community impact',body:'Start with how you want to participate. Explore Marrero Group’s nonprofit work and Sir Kendrick’s Smile for Autism.',href:'/community/',cta:'Explore community ↗'}
   };
   const result=document.getElementById('guideResult');
   document.querySelectorAll('[data-guide]').forEach(button=>{
