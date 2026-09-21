@@ -75,6 +75,13 @@ if (!fail.length) {
     if (insecure.length) fail.push(prefix+`insecure http resources: ${insecure.join(', ')}`);
   }
 
+  const legacyPageUrl = /https:\/\/www\.marrerogroupllc\.com\//i;
+  for (const file of htmlFiles) {
+    const html=readFileSync(file,'utf8');
+    if (legacyPageUrl.test(html)) fail.push(`[${file}] legacy Marrero site URL found; route internally instead`);
+  }
+  if (legacyPageUrl.test(js)) fail.push('assets/site.js legacy Marrero site URL found; route internally instead');
+
   for (const stale of ['premium.html','premium.css','premium.js','hotfix.css','site.css']) {
     if (css.includes(stale) || js.includes(stale)) fail.push(`stale implementation reference: ${stale}`);
     for (const file of htmlFiles) if (readFileSync(file,'utf8').includes(stale)) fail.push(`[${file}] stale implementation reference: ${stale}`);
