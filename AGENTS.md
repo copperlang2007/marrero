@@ -3,86 +3,61 @@
 ## Required read order
 1. `AGENTS.md`
 2. `docs/STATUS.md`
-3. `docs/PRODUCT_CONTRACT.md`
-4. `docs/ARCHITECTURE.md`
-5. relevant ADRs in `docs/adr/`
-6. implementation files
-7. recent evidence in `docs/evidence/`
+3. `docs/INFORMATION_ARCHITECTURE.md`
+4. `docs/CONTENT_PROVENANCE.md`
+5. `docs/PRODUCT_CONTRACT.md`
+6. `docs/ARCHITECTURE.md`
+7. relevant ADRs
+8. implementation files
 
 ## Product
 
-Marrero Group's public site serves:
-- ACA / individual and family health coverage
-- Medicare education and plan conversations
-- life insurance
-- retirement planning
-- quote/contact/scheduling pathways
-- agent recruiting
-- podcast/media
-- nonprofit/community work
-- Sir Kendrick's Smile for Autism
-- founder/company story
-- testimonials
+Marrero Group’s public site serves insurance clients, Medicare clients, life/retirement clients, prospective agents, podcast listeners and community/nonprofit audiences.
 
 ## Canonical architecture
 
-Only one website implementation may exist:
-- `index.html`
+The site is intentionally multi-page, but it has only one production design/behavior system.
+
+Shared canonical assets:
 - `assets/styles.css`
 - `assets/site.js`
 - `favicon.svg`
 
+Canonical routes are documented in `docs/INFORMATION_ARCHITECTURE.md`.
+
 Do not create:
-- alternate HTML entrypoints
+- alternate visual implementations of the same page
 - premium/legacy variants
 - hotfix stylesheets
-- temporary visual override files
-- duplicate production implementations
+- temporary override layers
+- duplicate competing route versions
 
-If a redesign is approved, modify the canonical files directly.
+Adding a legitimate first-party content page is allowed when it belongs to the documented information architecture and uses the canonical shared assets.
 
 ## Commands
 
 ```bash
-npm run check
-npm test
 npm run verify
 ```
 
-`npm run verify` is the release gate.
+This is the release gate and validates every HTML route.
+
+## Content rules
+
+- preserve verified business facts
+- never invent licensing/carrier relationships, compensation, programs, event dates, testimonials or compliance claims
+- use `docs/CONTENT_PROVENANCE.md` for migrated content
+- unknown/currently changing program details should be routed to contact rather than guessed
 
 ## Design contract
 
-Preserve the approved luxury Modern Legacy direction:
-- warm ivory clay surfaces
-- deep forest lacquer/glass
-- champagne/bronze metal accents
-- editorial serif hierarchy
-- controlled realistic depth
-- fluid proportions
-- restrained motion
-- intentional mobile composition
-
-Do not flatten the site into generic SaaS cards and do not use arbitrary perspective, shadows, or breakpoint overrides.
-
-## Engineering rules
-
-- evidence before assertion
-- no fabricated business, compliance, licensing, testimonial, or founder facts
-- no secrets in the repo
-- no dead links or fake-success forms
-- all meaningful UI changes must preserve desktop/mobile behavior
-- external image hosts must remain allowlisted in `scripts/verify.mjs`
-- update `docs/STATUS.md` after meaningful work
-- record architectural decisions in `docs/adr/`
-- document repeatable failures in `docs/playbooks/FAILURE_MEMORY.md`
+Preserve the Modern Legacy system: deep forest, ivory, bronze/champagne, editorial serif typography, restrained physical depth, fluid proportions and intentional mobile composition.
 
 ## Definition of done
 
-A change is complete only when:
-- implementation is in the canonical files
+- route exists in canonical information architecture
+- shared assets used
 - `npm run verify` passes
-- deployed production behavior is checked when deployment is affected
-- accessibility/security/compliance implications are considered
-- docs reflect repository reality
-- no alternate implementation or stale override layer was introduced
+- production route returns successfully if deployed
+- navigation and related CTAs point internally where appropriate
+- docs updated when route architecture changes
