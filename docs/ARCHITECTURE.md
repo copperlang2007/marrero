@@ -2,68 +2,56 @@
 
 ## Runtime model
 
-The site is intentionally static and framework-free.
+The site is a framework-free static multi-page application.
+
+Shared runtime:
 
 ```text
-index.html
-├── assets/styles.css
-├── assets/site.js
-└── favicon.svg
+assets/styles.css
+assets/site.js
+favicon.svg
 ```
 
-Vercel serves these files directly. There is no compile step, framework runtime, package dependency, alternate entrypoint, or generated production directory.
+Page routes are committed as directory `index.html` files and served directly by Vercel.
+
+## Route model
+
+```text
+/
+├── index.html
+├── services/index.html
+├── insurance/index.html
+├── medicare/index.html
+├── life-retirement/index.html
+├── agents/index.html
+├── podcast/index.html
+├── community/index.html
+├── sir-kendrick/index.html
+├── about/index.html
+├── schedule/index.html
+└── contact/index.html
+```
+
+All pages use the same stylesheet and JavaScript. Multiple content routes are legitimate; multiple competing design implementations are not.
 
 ## Responsibilities
 
-### index.html
-Owns semantic structure, verified content, links, forms, and accessibility attributes that belong in markup.
+### HTML routes
+Own semantic structure, page-specific content, links, forms and page metadata.
 
 ### assets/styles.css
-Owns all presentation:
-- responsive layout
-- design tokens
-- elevation/material system
-- typography
-- focus states
-- reduced-motion behavior
-
-No secondary stylesheet may override production design.
+Owns the entire production visual system and responsive behavior.
 
 ### assets/site.js
-Owns progressive enhancement only:
-- mobile navigation state/focus
-- accordion state and ARIA wiring
-- inquiry mailto preparation
-- reveal motion
-- fine-pointer depth response
+Owns progressive enhancement: mobile navigation, accordions, Marrero Compass, intro behavior and email-preparation forms.
 
-Core content remains readable without JavaScript.
+### vercel.json
+Owns legacy URL migration only. It must not be used to hide alternate visual implementations.
 
-## Responsive model
+## Deployment
 
-Breakpoints:
-- desktop: >1180px
-- compact desktop/tablet: <=1180px
-- tablet: <=900px
-- mobile: <=620px
+Vercel serves the repository statically with no compile step.
 
-Fluid sizing uses `clamp()`, bounded shells, explicit media/card aspect ratios, and composition changes rather than proportional shrinking.
+## Verification
 
-## External boundaries
-
-- fonts: Google Fonts
-- media: allowlisted `static.wixstatic.com`
-- scheduling/community/podcast: existing external Marrero destinations
-- deployment: Vercel
-
-## Guardrails
-
-`npm run verify` prevents:
-- inline CSS/JS override layers
-- stale alternate implementation names
-- duplicate IDs
-- broken fragment links
-- unsafe blank-target links
-- missing image alt text
-- unapproved external image hosts
-- missing accessibility motion/focus guardrails
+`scripts/verify.mjs` recursively checks every HTML page for canonical assets, duplicate IDs, broken fragments, broken first-party routes, unsafe external links, unapproved remote media and other production invariants.
