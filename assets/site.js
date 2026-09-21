@@ -141,3 +141,21 @@
       result.innerHTML='<div><span class="decision-result-kicker">Recommended next conversation</span><h3>'+data.title+'</h3><p>'+data.body+'</p></div><a class="button button-metal" href="'+data.href+'"'+(data.external?' target="_blank" rel="noopener"':'')+'>'+data.cta+'</a>';
     });
   });
+
+(() => {
+  const form=document.getElementById('scheduleForm');
+  if(!form) return;
+  const value=id=>document.getElementById(id)?.value.trim()||'';
+  form.addEventListener('submit',event=>{
+    event.preventDefault();
+    const subject=encodeURIComponent('Scheduling request — '+value('scheduleInterest'));
+    const body=encodeURIComponent(
+      'Name: '+value('scheduleFirst')+' '+value('scheduleLast')+
+      '\nEmail: '+value('scheduleEmail')+
+      '\nPhone: '+value('schedulePhone')+
+      '\nConversation: '+value('scheduleInterest')+
+      '\n\nPreferred timing / notes:\n'+value('scheduleMessage')
+    );
+    location.href='mailto:info@marrerogroupllc.com?subject='+subject+'&body='+body;
+  });
+})();
