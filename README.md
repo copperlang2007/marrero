@@ -1,6 +1,6 @@
 # Marrero Group Digital Platform
 
-This repository is the **single canonical implementation** of the Marrero Group public website.
+This repository is the canonical implementation of the Marrero Group PLLC public website.
 
 ## Production
 
@@ -8,19 +8,36 @@ This repository is the **single canonical implementation** of the Marrero Group 
 - Production URL: https://marrero-three.vercel.app/
 - Runtime: static HTML/CSS/JavaScript
 - Build step: none
-- Runtime dependencies: none
-- Package dependencies: none
+- Runtime/package dependencies: none
 
-## Canonical implementation
+## Canonical architecture
 
-There is one production implementation only:
+There is one visual/behavior system shared across multiple first-party content routes.
 
-- `index.html` — semantic page markup
-- `assets/styles.css` — the only production visual system
-- `assets/site.js` — the only production interaction/motion system
-- `favicon.svg` — site icon
+Core shared assets:
+- `assets/styles.css` — only production visual system
+- `assets/site.js` — only production interaction system
+- `favicon.svg`
 
-Alternate entrypoints, hotfix stylesheets, premium wrappers, and fallback visual systems are prohibited.
+First-party routes:
+- `/`
+- `/services/`
+- `/insurance/`
+- `/medicare/`
+- `/life-retirement/`
+- `/agents/`
+- `/podcast/`
+- `/community/`
+- `/sir-kendrick/`
+- `/about/`
+- `/schedule/`
+- `/contact/`
+
+These pages are not alternate implementations. They are the canonical information architecture.
+
+## Legacy-route migration
+
+`vercel.json` permanently redirects the old Wix-era paths to their new first-party equivalents so existing links can continue to work.
 
 ## Verification
 
@@ -28,40 +45,24 @@ Alternate entrypoints, hotfix stylesheets, premium wrappers, and fallback visual
 npm run verify
 ```
 
-This runs:
-- source integrity checks
-- JavaScript syntax validation
-- Node built-in tests
+The verification gate checks every HTML page and internal route. CI runs the same gate on pushes to `main` and pull requests.
 
-CI runs the same verification on pushes to `main` and pull requests.
+## Principles
 
-## Architecture principles
-
-- one source of truth
-- zero runtime framework/dependency overhead
-- fluid responsive proportions
-- accessible keyboard/focus behavior
-- reduced-motion support
-- no fabricated business/compliance facts
-- no dead-end or fake-success conversion behavior
-- no untracked visual override layers
-
-## External dependencies
-
-The site intentionally uses:
-- Google Fonts for typography
-- approved Marrero Group public images hosted on `static.wixstatic.com`
-- existing Marrero Group scheduling/community URLs
-
-External image hosts are constrained by repository verification.
+- one design system across all pages
+- first-party core journeys
+- no premium/legacy/hotfix visual variants
+- no fabricated business or compliance claims
+- responsive, accessible navigation
+- content provenance documented
+- Vercel production verified after structural changes
 
 ## Agent onboarding
 
-Read in order:
+Read:
 1. `AGENTS.md`
 2. `docs/STATUS.md`
-3. `docs/PRODUCT_CONTRACT.md`
-4. `docs/ARCHITECTURE.md`
-5. relevant ADRs
-6. implementation files
-7. recent evidence
+3. `docs/INFORMATION_ARCHITECTURE.md`
+4. `docs/CONTENT_PROVENANCE.md`
+5. `docs/PRODUCT_CONTRACT.md`
+6. `docs/ARCHITECTURE.md`
