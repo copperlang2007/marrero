@@ -49,3 +49,13 @@ test('authored Marrero identity and Compass remain part of the product', () => {
   assert.match(js, /marrero-intro-seen/);
   assert.match(js, /guideData/);
 });
+
+test('all first-party destination pages exist', () => {
+  const requiredPages = [
+    'services/index.html','insurance/index.html','medicare/index.html',
+    'life-retirement/index.html','agents/index.html','podcast/index.html',
+    'community/index.html','sir-kendrick/index.html','schedule/index.html',
+    'contact/index.html','about/index.html'
+  ];
+  for (const page of requiredPages) assert.ok(existsSync(page), `missing ${page}`);
+});
