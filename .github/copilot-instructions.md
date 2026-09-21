@@ -1,30 +1,34 @@
 # Copilot Instructions — Marrero
 
-## Canonical production architecture
-There is exactly one website implementation:
-- `index.html`
+## Architecture
+
+Marrero is a canonical static multi-page site.
+
+Shared production system:
 - `assets/styles.css`
 - `assets/site.js`
 - `favicon.svg`
 
-Never create alternate HTML entrypoints, premium/legacy variants, hotfix CSS, or competing visual systems. Modify the canonical source directly.
+First-party route map lives in `docs/INFORMATION_ARCHITECTURE.md`.
+
+Do not create alternate visual implementations, premium/legacy copies, hotfix CSS, or duplicate competing versions of an existing route. Legitimate new first-party pages are allowed when they extend the documented information architecture and use the shared design system.
 
 ## Required behavior
-- preserve luxury Modern Legacy design direction
-- preserve fluid desktop/tablet/mobile proportions
-- reuse existing tokens and elevation rules
+
+- preserve Modern Legacy luxury direction
+- preserve responsive proportions
+- keep core journeys first-party
+- never fabricate regulated or business claims
+- use content provenance before changing factual copy
 - maintain keyboard/focus/reduced-motion accessibility
-- never invent business/compliance/licensing/testimonial facts
-- never present mock behavior as production behavior
 - never commit secrets
 
 ## Verification
-Before completion run:
+
+Before completion:
 
 ```bash
 npm run verify
 ```
 
-Meaningful UI changes also require desktop/mobile visual inspection.
-
-Update `docs/STATUS.md` and relevant ADR/failure memory when architectural state changes.
+The gate checks every HTML page and internal route. Meaningful UI changes also require desktop/mobile visual inspection.
