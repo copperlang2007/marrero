@@ -12,7 +12,7 @@
 - fluid, non-distorted proportions
 - intentional responsive recomposition
 - restrained realistic depth
-- disciplined ivory/forest/bronze material system
+- disciplined ivory/navy/berry material system
 - strong typography and image crops
 
 ## MUST BE PROVEN

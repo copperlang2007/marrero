@@ -138,7 +138,7 @@
       button.classList.add('is-active');
       const data=guideData[button.dataset.guide];
       if(!data || !result) return;
-      result.innerHTML='<div><span class="decision-result-kicker">Recommended next conversation</span><h3>'+data.title+'</h3><p>'+data.body+'</p></div><a class="button button-metal" href="'+data.href+'"'+(data.external?' target="_blank" rel="noopener"':'')+'>'+data.cta+'</a>';
+      result.innerHTML='<div><span class="decision-result-kicker">Recommended next conversation</span><h3>'+data.title+'</h3><p>'+data.body+'</p></div><a class="button button-primary" href="'+data.href+'"'+(data.external?' target="_blank" rel="noopener"':'')+'>'+data.cta+'</a>';
     });
   });
 

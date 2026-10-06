@@ -2,7 +2,7 @@
 
 ## Direction
 
-Luxury Modern Legacy: founder-led editorial credibility with dimensional ivory clay, deep forest lacquer/glass, champagne/bronze metal, restrained physical depth and deliberate whitespace.
+Luxury Modern Legacy: founder-led editorial credibility with warm ivory surfaces, deep ink navy, signature berry actions, dusty rose accents and restrained champagne details, restrained physical depth and deliberate whitespace.
 
 ## Authorship standard
 
@@ -24,8 +24,8 @@ All production design lives in `assets/styles.css`. All behavior lives in `asset
 
 The stylesheet defines:
 - ivory/paper surfaces
-- forest surfaces
-- champagne/bronze accents
+- navy and slate surfaces
+- berry actions and dusty rose/champagne accents
 - ink/muted text
 - bounded shell width
 - radius hierarchy
@@ -69,3 +69,7 @@ Not every element should float.
 - accordion ARIA relationships
 - native button semantics in decision controls
 - adequate touch targets
+
+## Approved executive refresh
+
+Founder approved the navy, ivory and berry direction with the edited studio portrait, and authorized publication October 5–6, 2026. Navy #101A2A, slate #273449, ivory #F7F3ED, berry #A92F61, hover #842348, rose #E7C4CF, champagne detail #B89A63. This supersedes the forest palette. All 12 routes use the canonical stylesheet.

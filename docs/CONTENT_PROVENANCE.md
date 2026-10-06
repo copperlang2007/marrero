@@ -40,3 +40,7 @@ Do not invent current events, programs, donation status, addresses, school statu
 ## Compliance discipline
 
 Do not copy stale Medicare benefit examples into new production copy as universal claims. Plan benefits, premiums, networks and availability vary and must be presented accordingly.
+
+## Approved portrait and local media
+
+assets/charletta-marrero.webp is optimized from the user-approved AI-edited Natural Executive Headshot in Charcoal Studio.png, created September 24, 2026. Local marrero-media WebPs are optimized copies of the existing approved Wix image originals; no new claims or endorsements added.

@@ -51,7 +51,7 @@ This is the release gate and validates every HTML route.
 
 ## Design contract
 
-Preserve the Modern Legacy system: deep forest, ivory, bronze/champagne, editorial serif typography, restrained physical depth, fluid proportions and intentional mobile composition.
+Preserve the Modern Legacy system: deep ink navy, warm ivory, berry, restrained champagne, editorial serif typography, restrained physical depth, fluid proportions and intentional mobile composition.
 
 ## Definition of done
 
